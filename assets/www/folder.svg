@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect width="256" height="256" fill="#f5f5f5"/>
+  <rect x="20" y="72" width="216" height="132" rx="8" ry="8" fill="#f1c40f" stroke="#d4ac0d" stroke-width="4"/>
+  <rect x="36" y="44" width="96" height="52" rx="6" ry="6" fill="#f7d06b" stroke="#d4ac0d" stroke-width="3"/>
+  <text x="128" y="200" font-size="18" font-family="Arial, Helvetica, sans-serif" fill="#333" text-anchor="middle">Folder</text>
+</svg>

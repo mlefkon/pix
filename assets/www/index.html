@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Pix Gallery</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+      #nanogallery2 {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="float: right">(slide show: click pic & <span style="font-size: 1.5em;vertical-align: middle;">➤</span>)</div>
+    <div style="position: fixed; bottom: 0; right: 0">
+      <a href="/run/admin.html">[Admin]</a>
+    </div>
+    <h1>Pix Gallery / 相册</h1>
+    <div id="nanogallery2"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/nanogallery2/dist/jquery.nanogallery2.min.js"></script>
+    <script src="/cache/media-list.js"></script>
+    <script>
+      $(document).ready(function () {
+        if (typeof pixMediaItems === "undefined") {
+          pixMediaItems = [];
+        }
+        moreStepRows = window.innerWidth > 1500 ? 10 :
+                       window.innerWidth > 1075 ? 15 :
+                       window.innerWidth > 666 ? 20 : 30;
+        $("#nanogallery2").nanogallery2({
+          items: pixMediaItems,
+          galleryDisplayMode: "moreButton",
+          galleryDisplayMoreStep: moreStepRows,
+          gallerySorting: "titleAsc",
+          thumbnailWidth: 200,
+          thumbnailHeight: 200,
+          thumbnailBorderHorizontal: 0,
+          thumbnailBorderVertical: 0,
+          thumbnailGutterWidth: 5,
+          thumbnailGutterHeight: 5,
+          thumbnailHoverEffect: "description",
+          slideshowDelay: 5000,
+          viewerHideToolsDelay: 120000,
+          slideshowAutoStart: false,
+          viewerGallery: "none",
+          viewerToolbar: {
+            display: false,
+            //            standard: "minimizeButton, label",
+            //            minimized: "minimizeButton, label, fullscreenButton",
+          },
+          viewerTools: {
+            topLeft: "pageCounter, playPauseButton",
+            topRight:
+              "label, linkOriginalButton, rotateLeft, rotateRight, fullscreenButton, closeButton",
+          },
+          thumbnailLabel: { display: false },
+          thumbnailL1Label: { display: true },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Pix Admin — Run Scripts</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+        margin: 2rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.5rem 0.9rem;
+        background: #0078d4;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-right: 0.5rem;
+      }
+      .note {
+        color: #555;
+        margin-top: 1rem;
+      }
+      li {
+        margin: 0.6rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Admin — Run Scripts</h1>
+    <p>
+      Utility scripts for maintaining Photos & Thumbnails. 
+    </p>
+    <p>
+      First upload your photos to the /storagebox/pix/media/ directory, then use these:
+    </p>
+    <ul>
+      <li>
+        <a class="btn" href="./generate.cull.list.sh">Run 'Generate Web Cache'</a>
+        — Generates & caches web-friendly photos and thumbnails for any new pictures in the /media folder. Then runs 'Cull Orphans'.
+      </li>
+      <li>
+        <a class="btn" href="./cull.list.sh">Run 'Cull Orphans'</a>
+        — Culls any /CACHE photos & thumbs that aren't in /MEDIA anymore. Then runs 'Compile List'.
+      </li>
+      <li>
+        <a class="btn" href="./compilelist.sh">Run 'Compile List'</a>
+        — Generates the list of Gallery photos to display from all /CACHE photos.
+      </li>
+    </ul>
+        <hr />
+    <ul>
+      <li>
+        <a class="btn" href="./status">See Status</a>
+        — See status of current process.
+      </li>
+      <li>
+        <a class="btn" href="/cache/media-list.js">See Cached Media List</a>
+        — JSON array of files displayed by the Gallery.
+      </li>
+      <li>
+        <a class="btn" href="./env.sh">See Env Vars</a>
+        — See env vars that get passed to apache.
+      </li>
+    </ul>
+        <hr />
+    <ul>
+      <li>
+        <a class="btn" href="./nuke.confirm.html">Run 'Nuke'</a>
+        — Delete all Cached photos & thumbs (original media files will remain untouched)
+      </li>
+    </ul>
+    <p><a href="/">Back to Gallery</a></p>
+  </body>
+</html>
