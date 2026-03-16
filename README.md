@@ -3,8 +3,8 @@
 - Uses 'NanoGallery2': [https://nanogallery2.nanostudio.org](https://nanogallery2.nanostudio.org)
 - Easy Operation:
   - Start docker container
-  - Place photos into Media folder
-  - Click & web friendly versions created
+  - Place photos/video/audio into Media folder
+  - Click 'Admin' & web friendly versions created
 - Blocks web crawlers & prying eyes
 - Integrates with site analytics
 - Good for elderly viewers (simple operation, no complicated controls)
@@ -28,8 +28,8 @@ Repositories:
 - `VIDEO_PX_W`: Web-friendly video width (default: 640px)
 - `USER_ADMIN`="MyAdminUser" (default: anyone can access)
 - `USER_GUEST_CSV`="UserA,UserB,UserC" (default: anyone can access)
-    - Note: Users function as both username and (identical) password for HTTP Basic Auth.
-- `SITE_TITLE`: Text to appear as title at top of page
+    - Note: The 'User' here functions as both username and password (identical to username) for HTTP Basic Auth.  This is not for real security, but rather to act as a block for web crawlers and casual browsers.
+- `SITE_TITLE`: Text to appear as title at top of page (default: "Pix Gallery")
 - `INDEX_HTML_HEAD_TAG_INSERT`: Html text that will be inserted after the &lt;head&gt; tag of index.html, useful for Google Analytics, etc.
 ### Volumes
 - `/www/media`: This should be a host mount so media files can easily be dumped in.
@@ -46,6 +46,7 @@ docker run -d --name pix \
     -e VIDEO_PX_W=640 \
     -e USER_ADMIN="MyAdminUser" \
     -e USER_GUEST_CSV="UserA,UserB,UserC" \
+    -e SITE_TITLE="My Site" \
     -e INDEX_HTML_HEAD_TAG_INSERT="<script src=https://www.googletagmanager.com ...>
           </script>"
     mlefkon/pix-nanogallery2
