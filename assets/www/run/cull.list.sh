@@ -5,7 +5,7 @@
 set -e
 
 printf "Content-Type: text/html\r\n\r\n"
-printf "<html><head><title>Refresh</title></head>"
+printf "<html><head><title>Cull Orphans</title><meta charset="utf-8" /></head>"
 printf "<body>"
 printf "<pre>"
 

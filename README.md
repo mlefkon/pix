@@ -1,4 +1,5 @@
 # Simple Photo Album Website for Grandma
+
 - Uses 'NanoGallery2': [https://nanogallery2.nanostudio.org](https://nanogallery2.nanostudio.org)
 - Easy Operation:
   - Start docker container
@@ -8,6 +9,11 @@
 - Integrates with site analytics
 - Good for elderly viewers (simple operation, no complicated controls)
 
+Repositories:
+- GitHub: https://github.com/mlefkon/pix
+- DockerHub: https://hub.docker.com/repository/docker/mlefkon/pix-nanogallery2
+
+
 ## `docker build`
 ```bash
     ./build.sh
@@ -15,7 +21,7 @@
 
 ## `docker run`
 
-## Environment Variables
+### Environment Variables
 - `PHOTO_PX_H`: Web-friendly photo height (default: 720px)
 - `PHOTO_PX_W`: Web-friendly photo width (default: 1280px)
 - `VIDEO_PX_H`: Web-friendly video height (default: 480px)
@@ -23,8 +29,9 @@
 - `USER_ADMIN`="MyAdminUser" (default: anyone can access)
 - `USER_GUEST_CSV`="UserA,UserB,UserC" (default: anyone can access)
     - Note: Users function as both username and (identical) password for HTTP Basic Auth.
+- `SITE_TITLE`: Text to appear as title at top of page
 - `INDEX_HTML_HEAD_TAG_INSERT`: Html text that will be inserted after the &lt;head&gt; tag of index.html, useful for Google Analytics, etc.
-## Volumes
+### Volumes
 - `/www/media`: This should be a host mount so media files can easily be dumped in.
 - `/www/cache`: This can be a host mount or docker volume where the web-friendly cache can be stored.
 

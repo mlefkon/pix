@@ -5,7 +5,7 @@
 set -e
 
 printf "Content-Type: text/html\r\n\r\n"
-printf "<html><head><title>Refresh</title></head>"
+printf "<html><head><title>Generate Media</title><meta charset="utf-8" /></head>"
 printf "<body>"
 printf "<pre>"
 
@@ -13,8 +13,8 @@ printf "--------------------------\n"
 printf "GENERATE Gallery Web Media\n"
 printf "--------------------------\n"
 
-printf "  (NOT first deleting existing generated-for-web photos/thumbs - to nuke everything, run 'Nuke')\n"
-printf "  (it is more reliable to use the 'screen' command and run: /www/run/generate )"
+printf "  (This does NOT delete existing cached photos/thumbs, needed if you change PHOTO_PX_H/W - to nuke everything, run 'Nuke')\n"
+printf "  (If there are timeout problems, use 'screen' command on server and run: /www/run/generate.cull.list.sh )"
 printf "\n"
 
 START_TIME=$(date +%s)

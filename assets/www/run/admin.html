@@ -40,31 +40,31 @@
       Utility scripts for maintaining Photos & Thumbnails. 
     </p>
     <p>
-      First upload your photos to the /storagebox/pix/media/ directory, then use these:
+      First upload your photos to the /WWW/MEDIA linked directory, then use these:
     </p>
     <ul>
       <li>
         <a class="btn" href="./generate.cull.list.sh">Run 'Generate Web Cache'</a>
-        — Generates & caches web-friendly photos and thumbnails for any new pictures in the /media folder. Then runs 'Cull Orphans'.
+        — Generates & caches web-friendly photos & thumbnails for pictures in the /WWW/MEDIA folder. Then runs 'Cull Orphans'.
       </li>
       <li>
         <a class="btn" href="./cull.list.sh">Run 'Cull Orphans'</a>
-        — Culls any /CACHE photos & thumbs that aren't in /MEDIA anymore. Then runs 'Compile List'.
+        — Culls any /WWW/CACHE photos & thumbnails that aren't in /WWW/MEDIA anymore. Then runs 'Compile List'.
       </li>
       <li>
         <a class="btn" href="./compilelist.sh">Run 'Compile List'</a>
-        — Generates the list of Gallery photos to display from all /CACHE photos.
+        — Compiles the list of Gallery photos to display from all /WWW/CACHE photos.
       </li>
     </ul>
         <hr />
     <ul>
       <li>
         <a class="btn" href="./status">See Status</a>
-        — See status of current process.
+        — See status output of current process.
       </li>
       <li>
         <a class="btn" href="/cache/media-list.js">See Cached Media List</a>
-        — JSON array of files displayed by the Gallery.
+        — JSON array of files displayed by the Gallery produced by 'Compile List'.
       </li>
       <li>
         <a class="btn" href="./env.sh">See Env Vars</a>
@@ -75,7 +75,7 @@
     <ul>
       <li>
         <a class="btn" href="./nuke.confirm.html">Run 'Nuke'</a>
-        — Delete all Cached photos & thumbs (original media files will remain untouched)
+        — Delete all photos & thumbs in /WWW/CACHE (original media files will remain untouched).  'Generate Cache' will have to be re-run.
       </li>
     </ul>
     <p><a href="/">Back to Gallery</a></p>

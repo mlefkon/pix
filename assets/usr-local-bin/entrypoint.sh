@@ -35,6 +35,10 @@ if [ -n "$INDEX_HTML_HEAD_TAG_INSERT" ]; then
     sed -i "s#<head>#<head>${INDEX_HTML_HEAD_TAG_INSERT}#" /www/index.html
 fi
 
+sitetitle="${SITE_TITLE:-Pix Gallery / 相册}"
+echo "Page title set to: ${sitetitle}"
+sed -i 's#<!-- title -->'"#${sitetitle}#" /www/index.html
+
 mkdir -p /www/media
 mkdir -p /www/cache
 
