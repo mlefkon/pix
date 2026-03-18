@@ -24,7 +24,7 @@ rm -f /www/run/status
 
 /usr/local/bin/cull_orphans.sh 2>&1;  # clear orphans first, since media_list is generated off of webGenMedia, not orig media
 printf "\n"
-/usr/local/bin/compile_list.sh 2>&1;
+/usr/local/bin/gallery_list.sh 2>&1;
 
 END_TIME=$(date +%s)
 ELAPSED=$((END_TIME - START_TIME))

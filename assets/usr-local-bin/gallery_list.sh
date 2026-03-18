@@ -2,7 +2,7 @@
 
 set -e
 
-printf "Running compile_list.sh @ %s...\n" "$(date +"%Y.%m.%d %H:%M:%S")" | tee -a /www/run/status
+printf "Running gallery_list.sh @ %s...\n" "$(date +"%Y.%m.%d %H:%M:%S")" | tee -a /www/run/status
 
 START_TIME=$(date +%s)
 

@@ -44,10 +44,10 @@ mkdir -p /www/cache
 
 rm -f /www/run/status
 if [ -f /www/cache/media-list.js ]; then
-  echo "Media list already exists, skipping compile_list.sh"
+  echo "Media list already exists, skipping gallery_list.sh"
 else
-  echo "Media list does not exist, running compile_list.sh"
-  su -s /bin/sh apache -c /usr/local/bin/compile_list.sh
+  echo "Media list does not exist, running gallery_list.sh"
+  su -s /bin/sh apache -c /usr/local/bin/gallery_list.sh
 fi
 
 echo "Notes:"

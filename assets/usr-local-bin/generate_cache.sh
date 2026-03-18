@@ -85,7 +85,7 @@ while IFS= read -r relFilePath; do
         # Resize preserving aspect ratio, so that neither width nor height exceeds the max height/width.
         fileSize=$(du -h "$filepath" | awk '{print $1}')
         imgWidthHeight=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0:s=x "$filepath")
-        printf " - Photo: ${relDir}/${filename} (${imgWidthHeight})" | tee -a /www/run/status
+        printf " - Photo: (${imgWidthHeight})" | tee -a /www/run/status
         tmpFilePath="$(mktemp -u).jpg" # use a temp file to avoid incomplete files if ffmpeg fails
         # NOTE: Tried producing .webp here, size was smaller but quality was much worse.  
         #   If still want webp with similar quality to JPG (that uses: -q:v 5), will get ~25% smaller size.
@@ -122,7 +122,7 @@ while IFS= read -r relFilePath; do
         videoDuration=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$filepath" | cut -d. -f1)
         widthHeight=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$filepath")
         widthHeight="${widthHeight%x}"
-        printf " - Video: ${relDir}/${filename} (${widthHeight}, ${videoDuration}s)" | tee -a /www/run/status
+        printf " - Video: (${widthHeight}, ${videoDuration}s)" | tee -a /www/run/status
         tmpFilePath="$(mktemp -u).webm" # use a temp file to avoid incomplete files if ffmpeg fails
         VIDEO_START=$(date +%s)
         # Show progress with dot every ~20 output chunks (awk...)
@@ -155,7 +155,7 @@ while IFS= read -r relFilePath; do
       fileType=AUDIO
       audio_path="$photo_dir/${filename}.webm"
       if [ ! -f "$audio_path" ]; then
-        printf " - Audio: ${relDir}/${filename}" | tee -a /www/run/status
+        printf " - Audio: " | tee -a /www/run/status
         cp "$filepath" "$audio_path"
         # TODO: convert into audio-only .webm file, eg:
         #   ffmpeg -i test.m4a -c:a libopus -b:a 96k -vn test.webm

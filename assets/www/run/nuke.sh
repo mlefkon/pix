@@ -19,7 +19,7 @@ rm -rf /www/cache/thumb/* 2>&1 # > /dev/null 2>&1
 printf "  (original media has not been touched)\n" | tee -a /www/run/status
 printf "Done.\n" | tee -a /www/run/status
 printf "\n"
-printf "Now a '<a href=\"./generate.cull.list.sh\">generate</a>' should be run to re-generate web-friendly photos and thumbnails."
+printf "Now a '<a href=\"./cache.cull.list.sh\">generate</a>' should be run to re-generate web-friendly photos and thumbnails."
 printf "\n"
 
 printf "</pre>\n"

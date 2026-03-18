@@ -14,7 +14,7 @@ printf "GENERATE Gallery Web Media\n"
 printf "--------------------------\n"
 
 printf "  (This does NOT delete existing cached photos/thumbs, needed if you change PHOTO_PX_H/W - to nuke everything, run 'Nuke')\n"
-printf "  (If there are timeout problems, use 'screen' command on server and run: /www/run/generate.cull.list.sh )"
+printf "  (If there are timeout problems, use 'screen' command on server and run: /www/run/cache.cull.list.sh )"
 printf "\n"
 
 START_TIME=$(date +%s)
@@ -24,7 +24,7 @@ rm -f /www/run/status
 printf "\n"
 /usr/local/bin/cull_orphans.sh 2>&1;  # clear orphans first, since media_list is generated off of webGenMedia, not orig media
 printf "\n"
-/usr/local/bin/compile_list.sh 2>&1;
+/usr/local/bin/gallery_list.sh 2>&1;
 
 END_TIME=$(date +%s)
 ELAPSED=$((END_TIME - START_TIME))

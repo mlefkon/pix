@@ -24,7 +24,7 @@ rm -f /www/run/status
 
 
 
-/usr/local/bin/compile_list.sh 2>&1;
+/usr/local/bin/gallery_list.sh 2>&1;
 
 END_TIME=$(date +%s)
 ELAPSED=$((END_TIME - START_TIME))

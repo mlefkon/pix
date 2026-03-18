@@ -28,7 +28,7 @@ Repositories:
 - `VIDEO_PX_W`: Web-friendly video width (default: 640px)
 - `USER_ADMIN`="MyAdminUser" (default: anyone can access)
 - `USER_GUEST_CSV`="UserA,UserB,UserC" (default: anyone can access)
-    - Note: The 'User' here functions as both username and password (identical to username) for HTTP Basic Auth.  This is not for real security, but rather to act as a block for web crawlers and casual browsers.
+    - Note: The 'UserX' here functions as both username and password (identical to username) for HTTP Basic Authentication.  This is not for real security, but rather to act as a block for web crawlers and casual browsers.  Different 'Users' can be set to make the login easy to remember for different groups or families.
 - `SITE_TITLE`: Text to appear as title at top of page (default: "Pix Gallery")
 - `INDEX_HTML_HEAD_TAG_INSERT`: Html text that will be inserted after the &lt;head&gt; tag of index.html, useful for Google Analytics, etc.
 ### Volumes
